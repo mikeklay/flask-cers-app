@@ -33,7 +33,7 @@ def login():
 @app.route("/create_event", methods=["GET", "POST"])
 def create_event():
     if request.method == "POST":
-        title = request.form["event_name"]    # <-- matches form field
+        title = request.form["event_name"]    # <-- matches form field test
         date = request.form["event_date"]     # <-- matches form field
         desc = request.form.get("event_description", "")
         flash(f"Event '{title}' created for {date}! Description: {desc}", "info")
