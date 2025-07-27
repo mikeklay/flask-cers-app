@@ -3,7 +3,7 @@ name: Python Web App to Azure
 on:
   push:
     branches:
-      - main  # Set to your main branch
+      - main  # Set this to your deployment branch
 
 jobs:
   build-and-deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.10'  # Match your runtime
 
       - name: Install dependencies
         run: |
@@ -28,6 +28,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: flask-cers-app-erfgc2aechc9f7cc      # Make sure this matches your app service name
+          app-name: flask-cers-app-erfgc2aechc9f7cc  # Must match Azure app service name!
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: .
