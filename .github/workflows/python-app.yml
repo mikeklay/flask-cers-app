@@ -28,6 +28,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: flask-cers-app-erfgc2aechc9f7cc  # Must match Azure app service name!
+          app-name: flask-cers-app  # Must match Azure app service name!
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE2 }}
           package: .
